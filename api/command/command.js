@@ -25,7 +25,7 @@ function initRouter(){
                   Object.keys(examples).forEach(name => {
                     if(examples[name].value){
                       let r = JSON.stringify(JSON.parse(examples[name].value))
-                      addApi(url, method, r)
+                      addApi('swagger', url, method, r)
                       resultList.push({
                         url: url,
                         method: method,
@@ -36,7 +36,7 @@ function initRouter(){
                 })
               } else {
                 let r = JSON.stringify({})
-                addApi(url, method, r)
+                addApi('swagger', url, method, r)
                 resultList.push({
                   url: url,
                   method: method,
@@ -49,7 +49,7 @@ function initRouter(){
       } else {
         //swaggerJson이 아닌 경우
         fileData.forEach(elem => {
-          addApi(elem.url, elem.method, JSON.parse(elem.response))
+          addApi('simple', elem.url, elem.method, JSON.parse(elem.response))
           resultList.push({
             url: elem.url,
             method: elem.method,
@@ -74,7 +74,7 @@ function initRouter(){
     initRouter()
   })
 }
-function addApi(url, method, response){
+function addApi(type, url, method, response){
   if(url.startsWith('/') == false){
     url = '/' + url
   }
@@ -84,26 +84,41 @@ function addApi(url, method, response){
   switch (method.toLowerCase()){
     case "post":
       router.post(url, (req, res) => {
+        if(type == 'swagger'){
+          response = JSON.parse(response)
+        }
         res.json(response)
       })
       break
     case "get":
       router.get(url, (req, res) => {
+        if(type == 'swagger'){
+          response = JSON.parse(response)
+        }
         res.json(response)
       })
       break;
     case "put":
       router.put(url, (req, res) => {
+        if(type == 'swagger'){
+          response = JSON.parse(response)
+        }
         res.json(response)
       })
       break;
     case "patch":
       router.patch(url, (req, res) => {
+        if(type == 'swagger'){
+          response = JSON.parse(response)
+        }
         res.json(response)
       })
       break;
     case "delete":
       router.delete(url, (req, res) => {
+        if(type == 'swagger'){
+          response = JSON.parse(response)
+        }
         res.json(response)
       })
       break;
