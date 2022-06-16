@@ -1,0 +1,17 @@
+[
+  {
+    "method": "get",
+    "url": "/auth/role/3",
+    "response": " { \"roleCode\": \"ROLE_TEST\", \"roleName\": \"테스트 권한\", \"roleType\": \"MENU\", \"langs\": null, \"menus\": [], \"_embedded\": { \"result\": { \"code\": 0 } }, \"_links\": { \"self\": { \"href\": \"http://localhost:8080/auth/role/ROLE_TEST\" } } }"
+  },
+  {
+    "method": "get",
+    "url": "/auth/role",
+    "response": "{ \"roleCode\": \"ROLE_TEST\", \"roleName\": \"테스트 권한\", \"roleType\": \"MENU\", \"langs\": null, \"menus\": [], \"_embedded\": { \"result\": { \"code\": 0 } }, \"_links\": { \"self\": { \"href\": \"http://localhost:8080/auth/role/ROLE_TEST\" } } }"
+  },
+  {
+    "method": "patch",
+    "url": "/auth/role/3",
+    "response": "{ \"roleCode\": \"ROLE_TEST\", \"roleName\": \"테스트 권한\", \"roleType\": \"MENU\", \"langs\": null, \"menus\": [], \"_embedded\": { \"result\": { \"code\": 0 } }, \"_links\": { \"self\": { \"href\": \"http://localhost:8080/auth/role/ROLE_TEST\" } } }"
+  }
+]
