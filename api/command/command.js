@@ -85,41 +85,46 @@ function addApi(type, url, method, response){
     case "post":
       router.post(url, (req, res) => {
         if(type == 'swagger'){
-          response = JSON.parse(response)
+          res.json(JSON.parse(response))
+        } else {
+          res.json(response)
         }
-        res.json(response)
       })
       break
     case "get":
       router.get(url, (req, res) => {
         if(type == 'swagger'){
-          response = JSON.parse(response)
+          res.json(JSON.parse(response))
+        } else {
+          res.json(response)
         }
-        res.json(response)
       })
       break;
     case "put":
       router.put(url, (req, res) => {
         if(type == 'swagger'){
-          response = JSON.parse(response)
+          res.json(JSON.parse(response))
+        } else {
+          res.json(response)
         }
-        res.json(response)
       })
       break;
     case "patch":
       router.patch(url, (req, res) => {
         if(type == 'swagger'){
-          response = JSON.parse(response)
+          res.json(JSON.parse(response))
+        } else {
+          res.json(response)
         }
-        res.json(response)
       })
       break;
     case "delete":
       router.delete(url, (req, res) => {
         if(type == 'swagger'){
-          response = JSON.parse(response)
+          res.json(JSON.parse(response))
+        } else {
+          res.json(response)
         }
-        res.json(response)
       })
       break;
   }
